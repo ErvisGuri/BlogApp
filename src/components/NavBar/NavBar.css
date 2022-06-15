@@ -1,0 +1,72 @@
+.navbar {
+  width: 100%;
+  height: 70px;
+  background-color: rgb(223, 202, 202);
+  color: rgb(128, 126, 126);
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topLeft,.topRight {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fb {
+    margin-left: 70px;
+}
+
+.fb:hover {
+    color: blue;
+}
+
+.ig {
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.ig:hover {
+    color: rgb(200, 67, 89);
+}
+
+.tw {
+    margin-left: 50px;
+}
+
+.tw:hover {
+    color: blue;
+}
+
+.addpost {
+    margin-left:500px;
+}
+
+.addposth1 {
+    font-size: 25px;
+}
+
+.icon {
+ font-size: 25px;
+ margin-right: 10px;
+}
+
+
+
+.websitename {
+    font-size: 25px;
+}
+
+.search {
+    margin-top: 8px ;
+    height: 30px;
+    width: 100px;
+    margin-left: 450px;
+}
+
+
+
