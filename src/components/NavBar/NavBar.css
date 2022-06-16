@@ -1,5 +1,5 @@
 .navbar {
-  width: 100%;
+  width: 100vw;
   height: 70px;
   background-color: rgb(223, 202, 202);
   color: rgb(128, 126, 126);
@@ -10,11 +10,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.topLeft,.topRight {
-    flex: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.input.ant-input {
 }
 
 .fb {
@@ -55,18 +51,11 @@
  margin-right: 10px;
 }
 
-
-
 .websitename {
     font-size: 25px;
+    margin-left: 240px;
 }
 
-.search {
-    margin-top: 8px ;
-    height: 30px;
-    width: 100px;
-    margin-left: 450px;
-}
 
 
 

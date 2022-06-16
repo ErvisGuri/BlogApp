@@ -21,7 +21,14 @@ const NavBar = () => {
         <TwitterOutlined className="icon" />
       </div>
       <div className="websitename">MY BLOG WEBSITE</div>
-      <Search className="search" />
+      <Search
+        className="searchNav"
+        style={{
+          height: "30px",
+          width: "200px",
+          marginLeft: "400px",
+        }}
+      />
     </div>
   );
 };

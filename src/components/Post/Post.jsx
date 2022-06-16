@@ -1,20 +1,23 @@
 import React from "react";
 import "./Post.css";
 
-const Post = () => {
+const Post = ({ Post }) => {
   return (
-    <div className="post">
-      <h1 className="category">Developer 6/15/2022</h1>
+    <div className="postContainer">
+      <div className="card-header">
+        <h3 value={Post.category} className="category">
+          {Post.category}
+        </h3>
+        <h3 className="datePost" value={Post.date}>
+          {Post.date}
+        </h3>
+      </div>
       <div className="card">
-        <h2 className="name">Ervis Guri</h2>
-        <p>
-          I’m dedicating this space to anything and everything about learning.
-          Having been involved with a wonderful organization called Outward
-          Bound throughout my life gave me the inclination towards learning and
-          development. I am delving into this area more and more – and the more
-          I learn about it, the more interesting it becomes. The defining moment
-          for me was year 2010 when I was going through a personal turmoil,
-          during which I had to push myself beyond my limits to be strong.
+        <h2 value={Post.name} className="name">
+          {Post.name}
+        </h2>
+        <p className="TextAreaPost" value={Post.textArea}>
+          {Post.textArea}
         </p>
       </div>
     </div>

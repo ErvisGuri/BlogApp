@@ -24,3 +24,11 @@
     width: 120px;
 }
 
+.modalSubmitBtn {
+    margin: 5px 20px 5px 407px;
+    color: rgb(128, 126, 126);
+}
+
+.modalSubmitBtn:hover {
+    color: rgba(200,200,200)
+}
