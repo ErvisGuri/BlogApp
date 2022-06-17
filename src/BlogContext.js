@@ -10,21 +10,8 @@ export function BlogProvider({ children }) {
     const [categorys, setCategorys] = useState('');
     const [date, setDate] = useState('');
     const [textArea, setTextArea] = useState('');
-    const [postBlog, setPostBlog] = useState();
-    const [allpostBlogs, setAllPostBlogs] = useState([
-        {
-            name: 'Ervis Guri',
-            category: 'Cooking',
-            date: '2/06/2022',
-            textArea: 'aefegbskgbvaefegskhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhv',
-        },
-        {
-            name: 'Ervis Guri',
-            category: 'Cooking',
-            date: '2/04/2022',
-            textArea: 'aefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhv',
-        }
-    ]);
+    const [postBlog, setPostBlog] = useState({});
+    const [allpostBlogs, setAllPostBlogs] = useState([]);
 
 
     // () => JSON.parse(localStorage.getItem('postBlog')) ||

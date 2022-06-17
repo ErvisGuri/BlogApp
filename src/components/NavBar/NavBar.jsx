@@ -16,7 +16,6 @@ const NavBar = () => {
 
   const handlechange = (e) => {
     setPostBlog(e.target.value);
-    console.log(e.target.value);
   };
 
   //FILTER Serach ////////////////////////////////////////////////////////////////////////////////

@@ -21,6 +21,10 @@
     padding-top: 40px
 }
 
+.sortIcon:hover {
+    color:rgb(223, 202, 202);
+}
+
 .postDate{
     color: rgb(92, 91, 91);
 

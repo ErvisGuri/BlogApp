@@ -1,11 +1,7 @@
 import React from "react";
 import "./Post.css";
-import {
-  SortAscendingOutlined,
-  SortDescendingOutlined,
-} from "@ant-design/icons";
 
-const Post = ({ post, sortedDate }) => {
+const Post = ({ post }) => {
   return (
     <>
       <div className="card-header">
@@ -15,14 +11,6 @@ const Post = ({ post, sortedDate }) => {
         <h3 className="postDate" value={post.date}>
           {post.date}
         </h3>
-        <SortAscendingOutlined
-          onClick={() => sortedDate}
-          style={{ marginLeft: "350px", fontSize: "14px" }}
-        />
-        <SortDescendingOutlined
-          onClick={() => console.log(sortedDate)}
-          style={{ fontSize: "14px" }}
-        />
       </div>
       <div className="card">
         <h2 value={post.name} className="postName">

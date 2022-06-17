@@ -40,8 +40,9 @@ const ModalAdd = ({ nameTextHandler }) => {
       textArea: textArea,
       id: Math.random() * 1000,
     };
-    setPostBlog(postBlogObj);
-    allpostBlogs.push(postBlog);
+
+    allpostBlogs.push(postBlogObj);
+    setAllPostBlogs(allpostBlogs);
 
     handleCancel();
   };
@@ -63,7 +64,7 @@ const ModalAdd = ({ nameTextHandler }) => {
   };
 
   const dateChangeHandler = (e) => {
-    const dateFormat = "DD-MM-YYYY";
+    const dateFormat = "MM/DD/YYYY";
     setDate(e.format(dateFormat));
   };
 
