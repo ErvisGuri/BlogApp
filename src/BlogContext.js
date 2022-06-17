@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 const BlogContext = createContext();
 
@@ -10,7 +10,39 @@ export function BlogProvider({ children }) {
     const [categorys, setCategorys] = useState('');
     const [date, setDate] = useState('');
     const [textArea, setTextArea] = useState('');
-    const [postBlog, setPostBlog] = useState([]);
+    const [postBlog, setPostBlog] = useState();
+    const [allpostBlogs, setAllPostBlogs] = useState([
+        {
+            name: 'Ervis Guri',
+            category: 'Cooking',
+            date: '2/06/2022',
+            textArea: 'aefegbskgbvaefegskhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhv',
+        },
+        {
+            name: 'Ervis Guri',
+            category: 'Cooking',
+            date: '2/04/2022',
+            textArea: 'aefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvsbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhvaefegbskgbvksvbskvbkhdbvskhv',
+        }
+    ]);
+
+
+    // () => JSON.parse(localStorage.getItem('postBlog')) ||
+
+    // useEffect(() => {
+    //     const postBlog = JSON.parse(localStorage.getItem('postBlog'));
+    //     if (postBlog) {
+    //         setPostBlog(!postBlog);
+    //     }
+    // }, [])
+
+    // //Saving data to local storage 
+    // useEffect(() => {
+    //     localStorage.setItem('postBlog', JSON.stringify(postBlog));
+    // }, [postBlog]);
+
+
+
 
 
     return (
@@ -21,7 +53,8 @@ export function BlogProvider({ children }) {
                 categoryValue: [categorys, setCategorys],
                 dateValue: [date, setDate],
                 textAreaValue: [textArea, setTextArea],
-                postBlogValue: [postBlog, setPostBlog]
+                postBlogValue: [postBlog, setPostBlog],
+                allpostBlogsValue: [allpostBlogs, setAllPostBlogs]
             }}
         >
             {children}

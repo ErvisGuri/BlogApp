@@ -7,57 +7,43 @@ import ModalAdd from "../Modal/Modal";
 import BlogContext from "../../BlogContext";
 
 const PostList = () => {
-  const { nameValue, categoryValue, dateValue, textAreaValue, postBlogValue } =
-    React.useContext(BlogContext);
+  const {
+    nameValue,
+    categoryValue,
+    dateValue,
+    textAreaValue,
+    postBlogValue,
+    allpostBlogsValue,
+  } = React.useContext(BlogContext);
 
   const [name, setName] = nameValue;
   const [categorys, setCategorys] = categoryValue;
   const [date, setDate] = dateValue;
   const [textArea, setTextArea] = textAreaValue;
   const [postBlog, setPostBlog] = postBlogValue;
+  const [allpostBlogs, setAllPostBlogs] = allpostBlogsValue;
 
   const nameTextHandler = (e) => {
     setName(e.target.value);
   };
 
-  console.log(postBlog);
+  const currentdate = allpostBlogs[0];
+  console.log(currentdate);
+
+  const sortedDate = allpostBlogs
+    .sort((a, b) => {
+      return new Date(a).getDate() - new Date(b).getDate();
+    })
+    .reverse();
 
   return (
     <div className="container">
       <div className="container-post">
-        {postBlog.map((post, i) => {
-          console.log(post);
-          return (
-            <Post
-              post={post}
-              key={i}
-              Post={{
-                name: name,
-                category: categorys,
-                date: date,
-                textArea: textArea,
-              }}
-            />
-          );
-        })}
-        <Post
-          Post={{
-            name: name,
-            category: categorys,
-            date: date,
-            textArea: textArea,
-          }}
-        />
+        {allpostBlogs.map((item, index) => (
+          <Post key={index} post={item} sortedDate={sortedDate} />
+        ))}
       </div>
-      <ModalAdd
-        nameTextHandler={nameTextHandler}
-        PostModal={{
-          name: name,
-          category: categorys,
-          date: date,
-          textArea: textArea,
-        }}
-      />
+      <ModalAdd nameTextHandler={nameTextHandler} />
     </div>
   );
 };

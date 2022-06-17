@@ -1,5 +1,5 @@
 import { Button, Modal, Input, Select } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
 import { DatePicker } from "antd";
 import "./Modal.css";
@@ -8,35 +8,42 @@ import BlogContext from "../../BlogContext";
 const { Option } = Select;
 const { TextArea } = Input;
 
-const ModalAdd = ({ addNewPost, nameTextHandler }) => {
+const ModalAdd = ({ nameTextHandler }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const { nameValue, categoryValue, dateValue, textAreaValue, postBlogValue } =
-    React.useContext(BlogContext);
+  const {
+    nameValue,
+    allpostBlogsValue,
+    categoryValue,
+    dateValue,
+    textAreaValue,
+    postBlogValue,
+  } = React.useContext(BlogContext);
 
   const [name, setName] = nameValue;
   const [categorys, setCategorys] = categoryValue;
   const [date, setDate] = dateValue;
   const [textArea, setTextArea] = textAreaValue;
   const [postBlog, setPostBlog] = postBlogValue;
+  const [allpostBlogs, setAllPostBlogs] = allpostBlogsValue;
 
   const onSubmitChange = (e) => {
     setIsModalVisible(false);
     e.preventDefault();
-    setPostBlog([
-      ...postBlog,
-      {
-        text: name,
-        category: categorys,
-        date: date,
-        textArea: textArea,
-        id: Math.random() * 1000,
-      },
-    ]);
-    setName("");
-    setCategorys("");
-    setDate("");
-    setTextArea("");
+
+    /// postBlog ==> undefinding
+
+    const postBlogObj = {
+      name: name,
+      category: categorys,
+      date: date,
+      textArea: textArea,
+      id: Math.random() * 1000,
+    };
+    setPostBlog(postBlogObj);
+    allpostBlogs.push(postBlog);
+
+    handleCancel();
   };
 
   const showModal = () => {
@@ -45,6 +52,10 @@ const ModalAdd = ({ addNewPost, nameTextHandler }) => {
 
   const handleCancel = () => {
     setIsModalVisible(false);
+    setName("");
+    setCategorys("");
+    setDate("");
+    setTextArea("");
   };
 
   const nameChangeHandler = (e) => {
@@ -66,15 +77,28 @@ const ModalAdd = ({ addNewPost, nameTextHandler }) => {
 
   return (
     <>
-      <Button className="addBtn" onClick={showModal}>
+      <Button
+        style={{
+          color: "rgb(128, 126, 126)",
+          borderRadius: "15px",
+          marginRight: "200px",
+          marginTop: "200px",
+          position: "sticky",
+          top: "270px",
+        }}
+        onClick={showModal}
+      >
+        Add Post
         <PlusOutlined />
       </Button>
       <Modal
+        mask={true}
+        maskStyle={{ backgroundColor: "rgb(223, 202, 202)" }}
         onChange={nameTextHandler}
         wrapclassName="addPostModal"
         title="Add a Post"
         visible={isModalVisible}
-        onOk={addNewPost}
+        onOk={onSubmitChange}
         onCancel={handleCancel}
         bodyStyle={{ height: "400px" }}
         footer={false}
@@ -109,7 +133,7 @@ const ModalAdd = ({ addNewPost, nameTextHandler }) => {
             <DatePicker
               defaultValue={date}
               onChange={dateChangeHandler}
-              style={{ width: "200px", marginLeft: "90px" }}
+              style={{ width: "200px", marginLeft: "89.5px" }}
             />
           </div>
           <div style={{ marginTop: "20px" }}>
